@@ -78,7 +78,7 @@ def convertor(nr, base_nr, base_convert):
 
 
 print("╔══════════════════════════════════════════════╗")
-print(f"║INPUT in base {base_nr}, NR={nr}")
+print(f"║INPUT in base {base_nr}, NR = {nr}")
 print(f"║Loading", end='')
 time.sleep(0.3)
 print(f".", end='')

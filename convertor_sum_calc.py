@@ -1,6 +1,6 @@
 import time
 
-calc1 = False
+mini_calculator = True
 
 
 class Au(ZeroDivisionError):
@@ -12,53 +12,54 @@ class Au(ZeroDivisionError):
 
 
 # main function which calculate every operation
-def calc(nr1, nr2, gen_base, op, decimal_1, no_decimal_1, decimal_2, no_decimal_2):
+def simple_trans(nr1, nr2, gen_base, op, decimal_1, no_decimal_1, decimal_2, no_decimal_2):
     # calc + operation
-    if op == "+":
-        if gen_base == '10':
-            return float(base_10_to_any_d(convertor(nr1, gen_base, 10, decimal_1, no_decimal_1), gen_base, decimal_1,
-                                          no_decimal_1)) + float(
-                base_10_to_any_d(convertor(nr2, gen_base, 10, decimal_2, no_decimal_2), gen_base, decimal_2,
-                                 no_decimal_2))
-        else:
-            return float(base_n_to_10_d(convertor(nr1, gen_base, 10, decimal_1, no_decimal_1), gen_base, decimal_1,
-                                        no_decimal_1)) + float(
-                base_n_to_10_d(convertor(nr2, gen_base, 10, decimal_2, no_decimal_2), gen_base, decimal_2,
-                               no_decimal_2))
+    match op:
+        case "+":
+            if gen_base == '10':
+                return float(base_10_to_any_d(convertor(nr1, gen_base, 10, decimal_1, no_decimal_1), gen_base, decimal_1,
+                                              no_decimal_1)) + float(
+                    base_10_to_any_d(convertor(nr2, gen_base, 10, decimal_2, no_decimal_2), gen_base, decimal_2,
+                                     no_decimal_2))
+            else:
+                return float(base_n_to_10_d(convertor(nr1, gen_base, 10, decimal_1, no_decimal_1), gen_base, decimal_1,
+                                            no_decimal_1)) + float(
+                    base_n_to_10_d(convertor(nr2, gen_base, 10, decimal_2, no_decimal_2), gen_base, decimal_2,
+                                   no_decimal_2))
 
-    elif op == "-":
-        if gen_base == '10':
-            return float(base_10_to_any_d(convertor(nr1, gen_base, 10, decimal_1, no_decimal_1), gen_base, decimal_1,
-                                          no_decimal_1)) - float(
-                base_10_to_any_d(convertor(nr2, gen_base, 10, decimal_2, no_decimal_2), gen_base, decimal_2,
-                                 no_decimal_2))
-        else:
-            return float(base_n_to_10_d(convertor(nr1, gen_base, 10, decimal_1, no_decimal_1), gen_base, decimal_1,
-                                        no_decimal_1)) - float(
-                base_n_to_10_d(convertor(nr2, gen_base, 10, decimal_2, no_decimal_2), gen_base, decimal_2,
-                               no_decimal_2))
-    elif op == "/":
-        if gen_base == '10':
-            return float(base_10_to_any_d(convertor(nr1, gen_base, 10, decimal_1, no_decimal_1), gen_base, decimal_1,
-                                          no_decimal_1)) / float(
-                base_10_to_any_d(convertor(nr2, gen_base, 10, decimal_2, no_decimal_2), gen_base, decimal_2,
-                                 no_decimal_2))
-        else:
-            return float(base_n_to_10_d(convertor(nr1, gen_base, 10, decimal_1, no_decimal_1), gen_base, decimal_1,
-                                        no_decimal_1)) / float(
-                base_n_to_10_d(convertor(nr2, gen_base, 10, decimal_2, no_decimal_2), gen_base, decimal_2,
-                               no_decimal_2))
-    elif op == "*":
-        if gen_base == '10':
-            return float(base_10_to_any_d(convertor(nr1, gen_base, 10, decimal_1, no_decimal_1), gen_base, decimal_1,
-                                          no_decimal_1)) * float(
-                base_10_to_any_d(convertor(nr2, gen_base, 10, decimal_2, no_decimal_2), gen_base, decimal_2,
-                                 no_decimal_2))
-        else:
-            return float(base_n_to_10_d(convertor(nr1, gen_base, 10, decimal_1, no_decimal_1), gen_base, decimal_1,
-                                        no_decimal_1)) * float(
-                base_n_to_10_d(convertor(nr2, gen_base, 10, decimal_2, no_decimal_2), gen_base, decimal_2,
-                               no_decimal_2))
+        case "-":
+            if gen_base == '10':
+                return float(base_10_to_any_d(convertor(nr1, gen_base, 10, decimal_1, no_decimal_1), gen_base, decimal_1,
+                                              no_decimal_1)) - float(
+                    base_10_to_any_d(convertor(nr2, gen_base, 10, decimal_2, no_decimal_2), gen_base, decimal_2,
+                                     no_decimal_2))
+            else:
+                return float(base_n_to_10_d(convertor(nr1, gen_base, 10, decimal_1, no_decimal_1), gen_base, decimal_1,
+                                            no_decimal_1)) - float(
+                    base_n_to_10_d(convertor(nr2, gen_base, 10, decimal_2, no_decimal_2), gen_base, decimal_2,
+                                   no_decimal_2))
+        case "/":
+            if gen_base == '10':
+                return float(base_10_to_any_d(convertor(nr1, gen_base, 10, decimal_1, no_decimal_1), gen_base, decimal_1,
+                                              no_decimal_1)) / float(
+                    base_10_to_any_d(convertor(nr2, gen_base, 10, decimal_2, no_decimal_2), gen_base, decimal_2,
+                                     no_decimal_2))
+            else:
+                return float(base_n_to_10_d(convertor(nr1, gen_base, 10, decimal_1, no_decimal_1), gen_base, decimal_1,
+                                            no_decimal_1)) / float(
+                    base_n_to_10_d(convertor(nr2, gen_base, 10, decimal_2, no_decimal_2), gen_base, decimal_2,
+                                   no_decimal_2))
+        case "*":
+            if gen_base == '10':
+                return float(base_10_to_any_d(convertor(nr1, gen_base, 10, decimal_1, no_decimal_1), gen_base, decimal_1,
+                                              no_decimal_1)) * float(
+                    base_10_to_any_d(convertor(nr2, gen_base, 10, decimal_2, no_decimal_2), gen_base, decimal_2,
+                                     no_decimal_2))
+            else:
+                return float(base_n_to_10_d(convertor(nr1, gen_base, 10, decimal_1, no_decimal_1), gen_base, decimal_1,
+                                            no_decimal_1)) * float(
+                    base_n_to_10_d(convertor(nr2, gen_base, 10, decimal_2, no_decimal_2), gen_base, decimal_2,
+                                   no_decimal_2))
 
 
 numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
@@ -140,7 +141,7 @@ def convertor(nr, base_nr, base_convert, decimal_, no_decimal):
         return (base_10_to_any_d(base_n_to_10_d(nr, base_nr, decimal_, no_decimal), base_convert, decimal_, no_decimal))
 
 
-if calc1 is False:
+if mini_calculator is False:
     print("╔══════════════════════════════════════════════╗")
     print(f"║INPUT in base {base_nr}, NR={nr}")
     print(f"║Loading", end='')
@@ -160,7 +161,7 @@ if calc1 is False:
     print("")
     print("╚══════════════════════════════════════════════╝")
 
-elif calc1 is True:
+elif mini_calculator is True:
     print("Enter the numbers you want to use.")
     nr1 = input()
     nr2 = input()
@@ -201,7 +202,7 @@ elif calc1 is True:
     for i in range(max(len(nr1), len(nr2))):
         print("═", end="")
     print(op)
-    nr_final = calc(nr1, nr2, gen_base, op, decimal_1, no_decimal_1, decimal_2, no_decimal_2)
+    nr_final = simple_trans(nr1, nr2, gen_base, op, decimal_1, no_decimal_1, decimal_2, no_decimal_2)
     nr_final = str(nr_final)
 
     if "." in nr_final:

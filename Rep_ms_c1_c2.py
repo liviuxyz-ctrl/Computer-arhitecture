@@ -108,5 +108,5 @@ if __name__ == "__main__":
     print("Introduceți numărul dorit: ", end="")
     number = input()
     print(f'In mărime si stare (MS)  {transform(number, "MS")}')
-    print(f'In reprezentare fată de complement 1 (C1) : {transform(number, "C1")}')
+    print(f'In reprezentare fată de complement 1 (C1): {transform(number, "C1")}')
     print(f'In reprezentare fată de complement 2 (C2): {transform(number, "C2")}')

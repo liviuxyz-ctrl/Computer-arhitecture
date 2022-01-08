@@ -88,13 +88,14 @@ def trans_from_b10(nbr_zecimal):
         nbr_in_pr_simplelista.append(i)
     return ''.join(str(i) for i in nbr_in_pr_simplelista)
 
-#nbr_zecimal = '-0.75'
+nbr_zecimal = '-0.75'
+#
 nbr_binar = '1 1000 0001 01 '
 
-#nbr_binar = str(trans_from_b10(nbr_zecimal))
+nbr_binar = str(trans_from_b10(nbr_zecimal))
 
 nbr_zecimal = str(trans_in_b10(nbr_binar))
 nbr_zecimal = f"{float(nbr_zecimal):.2f}"
 
 print(f'Number in zecimal: {nbr_zecimal}')
-print(f'Number in binar: {nbr_binar}')
+print(f'Number in binar:   {nbr_binar}')
