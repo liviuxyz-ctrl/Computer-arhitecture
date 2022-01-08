@@ -77,10 +77,8 @@ def c2_rep(num1, n):
 
 
 def transform(number_, form='MS'):
-    negative_zero = False
     number_ = str(number_)
-    if number_ == '-0':
-        negative_zero = True
+    negative_zero = number_ == '-0'
     number_ = int(number_)
     nbr_bits = bits_checking(number_)
     number_in_b2 = base10_to_base2(number_)
@@ -97,12 +95,12 @@ def transform(number_, form='MS'):
     represent_ms = list_to_string(ms)
     represent_c1 = list_to_string(c1)
     represent_c2 = list_to_string(c2)
-    if form == "MS":
-        return represent_ms
-    elif form == "C1":
+    if form == "C1":
         return represent_c1
     elif form == "C2":
         return represent_c2
+    elif form == "MS":
+        return represent_ms
 
 
 # bcs we are using this in other programs as well

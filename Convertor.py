@@ -1,17 +1,19 @@
 import time
+
 numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
 precision = 4
-nr = '54323.465'
+nr = '54323.4654'
 base_nr = 16
-base_convert = 10
-#There is the place if I check if the nr has any decimals
+base_convert = 16
+# There is the place if I check is the nr has any decimals
 if "." in nr:
     no_decimal, decimal = str(nr).split(".")
 else:
     no_decimal = nr
     decimal = '0'
 
-#base n to base 10 without decimals
+
+# base n to base 10 without decimals
 
 def base_n_to_10(nr_, base_of_nr_):
     rez = 0
@@ -22,7 +24,8 @@ def base_n_to_10(nr_, base_of_nr_):
 
     return rez
 
-#base n to base 10 with decimals
+
+# base n to base 10 with decimals
 
 def base_n_to_10_d(nr_, base_of_nr_):
     output = str(base_n_to_10(no_decimal, base_of_nr_)) + "."
@@ -36,7 +39,8 @@ def base_n_to_10_d(nr_, base_of_nr_):
 
     return float(output) + rez
 
-#base 10 to base n without decimals
+
+# base 10 to base n without decimals
 def base_10_to_any(nr_, base_):
     digits = []
     # Algorithm to transform from base 10 to any base lower than 16
@@ -47,7 +51,8 @@ def base_10_to_any(nr_, base_):
     # output str instead of list
     return ''.join(map(str, digits))
 
-#base 10 to base n with decimals
+
+# base 10 to base n with decimals
 def base_10_to_any_d(nr_, base_):
     no_decimal, decimal = str(nr_).split(".")
     no_decimal = int(no_decimal)
@@ -71,19 +76,20 @@ def convertor(nr, base_nr, base_convert):
     else:
         return (base_10_to_any_d(base_n_to_10_d(nr, base_nr), base_convert))
 
+
 print("╔══════════════════════════════════════════════╗")
 print(f"║INPUT in base {base_nr}, NR={nr}")
-print(f"║Loading",end='')
+print(f"║Loading", end='')
 time.sleep(0.3)
-print(f".",end='')
+print(f".", end='')
 time.sleep(0.4)
-print(f".",end='')
+print(f".", end='')
 time.sleep(0.4)
-print(f".",end='')
+print(f".", end='')
 time.sleep(0.4)
 print("DONE :)")
 for i in f"║OUTPUT in base {base_convert} => ", convertor(nr, base_nr, base_convert):
     time.sleep(0.7)
-    print(i,end="")
+    print(i, end="")
 print("")
 print("╚══════════════════════════════════════════════╝")

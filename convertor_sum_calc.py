@@ -11,7 +11,7 @@ class Au(ZeroDivisionError):
         return self.m
 
 
-# main function wich calculate every operation
+# main function which calculate every operation
 def calc(nr1, nr2, gen_base, op, decimal_1, no_decimal_1, decimal_2, no_decimal_2):
     # calc + operation
     if op == "+":
@@ -62,12 +62,12 @@ def calc(nr1, nr2, gen_base, op, decimal_1, no_decimal_1, decimal_2, no_decimal_
 
 
 numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
-# REMBER TO CHANGE THIS AS WELL
+# REMEMBER TO CHANGE THIS AS WELL
 precision = 4
 nr = '22'
 base_nr = 10
 base_convert = 10
-# There is the place if I check if the nr has any decimals
+# There is the place if I check is the nr has any decimals
 
 if "." in nr:
     no_decimal, decimal = str(nr).split(".")
@@ -170,7 +170,7 @@ elif calc1 is True:
     print('Choose one of the following operations: "+", "-" "/" "*"')
     op = input()
     if op == "/" and nr2 == '0':
-        raise Au("Can't devide by zero :(")
+        raise Au("Can't divide by zero :(")
     if "." in nr1:
         no_decimal_1, decimal_1 = str(nr1).split(".")
     else:
