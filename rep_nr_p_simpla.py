@@ -89,7 +89,6 @@ def trans_from_b10(nbr_zecimal):
     return ''.join(str(i) for i in nbr_in_pr_simplelista)
 
 nbr_zecimal = '-0.75'
-#
 nbr_binar = '1 1000 0001 01 '
 
 nbr_binar = str(trans_from_b10(nbr_zecimal))

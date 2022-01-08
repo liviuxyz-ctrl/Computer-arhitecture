@@ -6,6 +6,7 @@ nr = '54323.4654'
 base_nr = 16
 base_convert = 16
 # There is the place if I check is the nr has any decimals
+
 if "." in nr:
     no_decimal, decimal = str(nr).split(".")
 else:
@@ -41,6 +42,7 @@ def base_n_to_10_d(nr_, base_of_nr_):
 
 
 # base 10 to base n without decimals
+
 def base_10_to_any(nr_, base_):
     digits = []
     # Algorithm to transform from base 10 to any base lower than 16
@@ -53,6 +55,7 @@ def base_10_to_any(nr_, base_):
 
 
 # base 10 to base n with decimals
+
 def base_10_to_any_d(nr_, base_):
     no_decimal, decimal = str(nr_).split(".")
     no_decimal = int(no_decimal)
