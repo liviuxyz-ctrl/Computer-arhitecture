@@ -1,4 +1,4 @@
-# computer_arhi
+# Computer arhitecture
 My computer science programs for computer architecture.
 
 ## Convertor 
