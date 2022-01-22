@@ -1,2 +1,5 @@
 # computer_arhi
-My computer science programs for computer architecture,
+My computer science programs for computer architecture.
+
+## Convertor 
+This program can convert any positive number from base (2-16) with decimal point specified in the precision variable in any other base from (2-16).
